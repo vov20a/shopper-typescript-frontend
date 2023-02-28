@@ -1,0 +1,30 @@
+.ModalSlider {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: none;
+  background: rgba(255, 255, 255, 0.9);
+  opacity: 1;
+  overflow: visible;
+  height: auto;
+  width: 390px;
+  margin: 300px auto;
+  z-index: 100;
+}
+
+.ModalSliderContent {
+  padding: 25px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 16px;
+  min-width: 250px;
+  position: absolute;
+  /* top: 00px; */
+}
+
+.ModalSlider.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

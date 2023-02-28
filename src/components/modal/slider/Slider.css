@@ -1,0 +1,14 @@
+#carousel-product .carousel-control-prev,
+#carousel-product .carousel-control-next {
+  display: block !important;
+}
+
+#carousel-product .carousel-control-prev {
+  left: -38px;
+  top: 160px;
+}
+
+#carousel-product .carousel-control-next {
+  right: -38px;
+  top: 160px;
+}
