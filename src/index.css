@@ -1202,6 +1202,12 @@ form.login-form p > a:hover {
   .product-box .options-box ul li {
     font-size: 10px;
   }
+  .product-box .options-box {
+    max-height: 50px;
+  }
+  .product-box .options-box ul:first-of-type {
+    margin-top: 5px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1337,6 +1343,24 @@ form.login-form p > a:hover {
     display: flex;
     flex-wrap: nowrap;
   }
+
+  .navbar .container,
+  .navbar .container-fluid,
+  .navbar .container-lg,
+  .navbar .container-md,
+  .navbar .container-sm,
+  .navbar .container-xl {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    -ms-flex-pack: justify;
+    flex-direction: column;
+  }
+  #basic-navbar-nav {
+    margin-left: 60px;
+  }
 }
 
 /*появляется горизонтальная полоса прокрутки из-за вертикальной пп  */
@@ -1345,11 +1369,43 @@ form.login-form p > a:hover {
   .container-my {
     padding: 10px;
   }
+  .header_text {
+    font-size: 12px !important;
+    line-height: 18px !important;
+  }
+  #carousel-product .carousel-control-next {
+    right: -38px;
+    top: 100px;
+  }
+  #carousel-product .carousel-control-prev {
+    left: -38px;
+    top: 100px;
+  }
+  .ModalSlider_ModalSliderContent__xHLUR {
+    max-width: 300px !important;
+  }
 }
 
 @media (max-width: 400px) {
   .product-box .product-price {
     bottom: 10px;
+  }
+  .product-bunner-layout {
+    display: none;
+  }
+  .bottom-menu {
+    margin-bottom: 30px;
+  }
+  #carousel-product .carousel-control-next {
+    right: -30px;
+    top: 100px;
+  }
+  #carousel-product .carousel-control-prev {
+    left: -30px;
+    top: 100px;
+  }
+  .ModalSlider_ModalSliderContent__xHLUR {
+    max-width: 250px !important;
   }
 }
 /* button open-close */
