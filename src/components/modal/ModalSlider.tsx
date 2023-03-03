@@ -20,7 +20,6 @@ const ModalSlider: React.FC<ModalSliderProps> = ({ isVisible, setVisible, childr
                 <div className=" p-3">
                     <CloseButton aria-label="Hide" onClick={() => setVisible(false)} />
                 </div>
-                {/* ; */}
                 {children}
             </div>
         </div>

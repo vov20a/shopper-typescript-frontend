@@ -2,7 +2,7 @@ import React from 'react'
 import { Product } from '../redux/slices/productSlice'
 import { useParams } from 'react-router-dom'
 import Loader from '../components/loader/Loader'
-import { Carousel, Col, Container, Nav, Row, Tab, Tabs } from 'react-bootstrap'
+import { Carousel, Col, Container, Row, Tab, Tabs } from 'react-bootstrap'
 import SideBar from '../components/sidebar/SideBar'
 import ProductItem from '../components/ProductItem'
 import Slider from '../components/modal/slider/Slider'
@@ -110,13 +110,13 @@ const ProductPage: React.FC = () => {
                                 <div className="thumbnail-img">
                                     <p className="fancybox thumbnail" data-fancybox-group="group1"
                                         title={product?.title}>
-                                        <img onClick={sliderHandler} alt="" src={product?.productUrl} /></p>
+                                        <img onClick={sliderHandler} alt="" src={process.env.REACT_APP_API_URL + 'uploads/' + product?.productUrl} /></p>
                                 </div>
                                 <ul className="thumbnail-small">
                                     {viewsProducts.map((product: Product) =>
                                         <li className="w-md-20 w-100" key={product._id}>
-                                            <a href={product.productUrl} className="fancybox thumbnail" data-fancybox-group="group1"
-                                                title={product.description}><img src={product.productUrl} alt="" /></a>
+                                            <a href={process.env.REACT_APP_API_URL + 'uploads/' + product.productUrl} className="fancybox thumbnail" data-fancybox-group="group1"
+                                                title={product.description}><img src={process.env.REACT_APP_API_URL + 'uploads/' + product.productUrl} alt="" /></a>
                                         </li>
                                     )}
                                 </ul>

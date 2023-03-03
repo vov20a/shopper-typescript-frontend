@@ -49,7 +49,7 @@ const ProductOneItem: React.FC<ProductOneItemsProps> = ({ product }) => {
         <div className="product-box ">
             <span className="sale_tag "></span>
             <div className="img-background">
-                <Link to={`/products/${categoryRandomize._id}/${product._id}`}><img src={product.productUrl}
+                <Link to={`/products/${categoryRandomize._id}/${product._id}`}><img src={process.env.REACT_APP_API_URL + 'uploads/' + product.productUrl}
                     alt=" " /></Link>
             </div>
             <div className="product-title">
