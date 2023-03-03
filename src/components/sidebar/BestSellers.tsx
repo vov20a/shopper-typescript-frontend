@@ -24,7 +24,7 @@ const BestSellers: React.FC<BestSellersProps> = ({ bestProducts, errorBestProduc
                     {bestProducts.map((product: Product) =>
                         <li key={product._id}>
                             <Link to={`/products/${product.categoryId._id}/${product._id}`}>
-                                <img src={process.env.REACT_APP_API_URL + 'uploads/' + product.productUrl} alt={product.title} />
+                                <img src={process.env.REACT_APP_API_URL + '/uploads/' + product.productUrl} alt={product.title} />
                             </Link>
                             <Link to={`/categories/${product.categoryId._id}`}>{product.categoryId.title}</Link> <br />
                             <span style={{ marginLeft: 60 }}>RATING:{product.rating}</span>

@@ -16,7 +16,7 @@ const Slider: React.FC<SliderProps> = ({ viewsProducts, setVisible }) => {
                 <Carousel.Item key={product._id}>
                     <img
                         className="d-block w-100"
-                        src={process.env.REACT_APP_API_URL + 'uploads/' + product.productUrl}
+                        src={process.env.REACT_APP_API_URL + '/uploads/' + product.productUrl}
                         alt="First slide"
                     />
                 </Carousel.Item>

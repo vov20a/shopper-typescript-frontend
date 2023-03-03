@@ -67,7 +67,7 @@ const OrderPage: React.FC = () => {
                                             </button>
                                         </td>
                                         <td style={{ textAlign: "center" }}>
-                                            <Link to={`/products/${product.categoryId._id}/${product._id}`}><img alt="img" src={process.env.REACT_APP_API_URL + 'uploads/' + product.productUrl} /></Link>
+                                            <Link to={`/products/${product.categoryId._id}/${product._id}`}><img alt="img" src={process.env.REACT_APP_API_URL + '/uploads/' + product.productUrl} /></Link>
                                         </td>
                                         <td style={{ textAlign: "center" }}>{product.title}</td>
                                         <td style={{ textAlign: "center" }}>

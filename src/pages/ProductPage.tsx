@@ -110,13 +110,13 @@ const ProductPage: React.FC = () => {
                                 <div className="thumbnail-img">
                                     <p className="fancybox thumbnail" data-fancybox-group="group1"
                                         title={product?.title}>
-                                        <img onClick={sliderHandler} alt="" src={process.env.REACT_APP_API_URL + 'uploads/' + product?.productUrl} /></p>
+                                        <img onClick={sliderHandler} alt="" src={process.env.REACT_APP_API_URL + '/uploads/' + product?.productUrl} /></p>
                                 </div>
                                 <ul className="thumbnail-small">
                                     {viewsProducts.map((product: Product) =>
                                         <li className="w-md-20 w-100" key={product._id}>
-                                            <a href={process.env.REACT_APP_API_URL + 'uploads/' + product.productUrl} className="fancybox thumbnail" data-fancybox-group="group1"
-                                                title={product.description}><img src={process.env.REACT_APP_API_URL + 'uploads/' + product.productUrl} alt="" /></a>
+                                            <a href={process.env.REACT_APP_API_URL + '/uploads/' + product.productUrl} className="fancybox thumbnail" data-fancybox-group="group1"
+                                                title={product.description}><img src={process.env.REACT_APP_API_URL + '/uploads/' + product.productUrl} alt="" /></a>
                                         </li>
                                     )}
                                 </ul>
