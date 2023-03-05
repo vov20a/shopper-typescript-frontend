@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, Navigate, useLocation } from 'react-router-dom';
 import { Row, Col, Form, Button, Alert, } from 'react-bootstrap'
 import { useForm } from "react-hook-form";
-import { LoginParams, fetchAuth, selectStatus, selectIsAuth } from '../redux/slices/authSlice';
+import { LoginParams, fetchAuth, selectStatus, selectIsAuth, fetchAuthMe } from '../redux/slices/authSlice';
 import { useAppDispatch } from '../redux/store';
 import { useSelector } from 'react-redux';
 import Loader from '../components/loader/Loader';
@@ -15,6 +15,10 @@ const Login: React.FC = () => {
     const status = useSelector(selectStatus);
     const isLoading = status === StatusFetch.loading || false;
     const isAuth = useSelector(selectIsAuth)
+
+    React.useEffect(() => {
+        dispatch(fetchAuthMe());
+    }, []);
 
 
     const {

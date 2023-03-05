@@ -5,7 +5,6 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import NotFoundPage from './pages/NotFoundPage';
 import Register from './pages/Register';
-import Cart from './pages/Cart';
 import { useSelector } from 'react-redux';
 import { fetchAuthMe, selectIsAuth } from './redux/slices/authSlice';
 import { useAppDispatch } from './redux/store';
@@ -18,6 +17,7 @@ import { ProtectedCreatePassword } from './hoc/ProtectedCreatePassword';
 import CreatePassword from './pages/CreatePassword';
 import Remember from './pages/Remember';
 import { ProtectedAuthRoute } from './hoc/ProtectedAuthRoute';
+
 
 
 
@@ -47,7 +47,7 @@ const App: React.FC = () => {
 
   const isAuth = useSelector(selectIsAuth);
   React.useEffect(() => {
-    dispatch(fetchAuthMe())//.then(() => dispatch(setStatus('loaded')));
+    dispatch(fetchAuthMe());
   }, []);
 
   const email = window.localStorage.getItem('restoreEmail');

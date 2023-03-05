@@ -1,9 +1,9 @@
 import React from 'react'
 import { Button, Col, Form, Row } from 'react-bootstrap';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { useAppDispatch } from '../redux/store';
 import { useForm } from 'react-hook-form';
-import { FetchAuthParams, fetchRegister, RegisterParams, selectIsAuth, selectStatus } from '../redux/slices/authSlice';
+import { fetchAuthMe, FetchAuthParams, fetchRegister, RegisterParams, selectIsAuth, selectStatus } from '../redux/slices/authSlice';
 import { useSelector } from 'react-redux';
 import Loader from '../components/loader/Loader';
 import { StatusFetch } from '../redux/slices/orderSlice';
@@ -14,10 +14,13 @@ import { StatusFetch } from '../redux/slices/orderSlice';
 const Register: React.FC = () => {
     const isAuth = useSelector(selectIsAuth);
 
-    const navigate = useNavigate();
     const dispatch = useAppDispatch();
     const status = useSelector(selectStatus);
     const isLoading = status === StatusFetch.loading || false;
+
+    React.useEffect(() => {
+        dispatch(fetchAuthMe());
+    }, []);
 
     const {
         register,
@@ -43,7 +46,7 @@ const Register: React.FC = () => {
         const data = await dispatch(fetchRegister(values));
 
         if (!data.payload) {
-            alert('Не удалось авторизоваться');
+            alert('Не удалось зарегистрироваться');
             return;
         }
     };
