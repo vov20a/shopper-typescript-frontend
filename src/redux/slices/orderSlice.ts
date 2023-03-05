@@ -6,7 +6,7 @@ import { AxiosResponse } from 'axios';
 
 
 export const fetchOrder = createAsyncThunk<IOrderResult, IOrderItems>('orders/fetchOrder', async (params) => {
-    const { data } = await axios.post<IOrderResult>('/order', { ...params, products: params.cartProducts });
+    const { data } = await axios.post<IOrderResult>('/orders', { ...params, products: params.cartProducts });
     if (data) {
         await axios.post<AxiosResponse<string> | { error: any }, any>('/mail', { email: params.email, message: params.message });
     }
